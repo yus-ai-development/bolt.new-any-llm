@@ -1,0 +1,36 @@
+# 版本控制
+.git
+.gitignore
+
+# 依赖目录
+node_modules
+
+# 日志文件
+*.log
+
+# 开发环境文件
+.env.local
+.env.development
+
+# 测试文件
+test
+__tests__
+*.test.js
+*.spec.js
+
+# 构建输出
+/build
+/dist
+
+# 编辑器配置
+.vscode
+.idea
+
+# 操作系统文件
+.DS_Store
+Thumbs.db
+
+# 其他不需要部署的文件或目录
+README.md
+CHANGELOG.md
+docs

@@ -9,8 +9,9 @@ import { createOpenRouter } from "@openrouter/ai-sdk-provider";
 import { mistral } from '@ai-sdk/mistral';
 import { createMistral } from '@ai-sdk/mistral';
 
-export function getAnthropicModel(apiKey: string, model: string) {
+export function getAnthropicModel(baseURL:string, apiKey: string, model: string) {
   const anthropic = createAnthropic({
+    baseURL,
     apiKey,
   });
 
@@ -106,7 +107,7 @@ export function getModel(provider: string, model: string, env: Env, apiKeys?: Re
 
   switch (provider) {
     case 'Anthropic':
-      return getAnthropicModel(apiKey, model);
+      return getAnthropicModel(baseURL, apiKey, model);
     case 'OpenAI':
       return getOpenAIModel(apiKey, model);
     case 'Groq':
