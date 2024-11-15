@@ -6,7 +6,6 @@ import { createOpenAI } from '@ai-sdk/openai';
 import { createGoogleGenerativeAI } from '@ai-sdk/google';
 import { ollama } from 'ollama-ai-provider';
 import { createOpenRouter } from "@openrouter/ai-sdk-provider";
-import { mistral } from '@ai-sdk/mistral';
 import { createMistral } from '@ai-sdk/mistral';
 
 export function getAnthropicModel(baseURL:string, apiKey: string, model: string) {
@@ -42,9 +41,9 @@ export function getMistralModel(apiKey: string, model: string) {
 }
 
 export function getGoogleModel(apiKey: string, model: string) {
-  const google = createGoogleGenerativeAI(
+  const google = createGoogleGenerativeAI({
     apiKey,
-  );
+  });
 
   return google(model);
 }
